@@ -16,8 +16,9 @@ return new class extends Migration
 
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('name')->unique();;
+//            $table->string('slug');
+            $table->morphs('taggable'); // this adds two columns: taggable_id and taggable_type
             $table->timestamps();
         });
 

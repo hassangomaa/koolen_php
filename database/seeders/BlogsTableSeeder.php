@@ -25,21 +25,21 @@ class BlogsTableSeeder extends Seeder
             BlogCategory::create($category);
         }
 
-        // Create some blog tags
-        $tags = [
-            ['name' => 'PHP', 'slug' => 'php'],
-            ['name' => 'Laravel', 'slug' => 'laravel'],
-            ['name' => 'JavaScript', 'slug' => 'javascript'],
-            ['name' => 'React', 'slug' => 'react'],
-            ['name' => 'Vue.js', 'slug' => 'vue-js'],
-            ['name' => 'Fashion', 'slug' => 'fashion'],
-            ['name' => 'Food', 'slug' => 'food'],
-            ['name' => 'Travel', 'slug' => 'travel'],
-        ];
-
-        foreach ($tags as $tag) {
-            BlogTag::create($tag);
-        }
+//        // Create some blog tags
+//        $tags = [
+//            ['name' => 'PHP', 'slug' => 'php'],
+//            ['name' => 'Laravel', 'slug' => 'laravel'],
+//            ['name' => 'JavaScript', 'slug' => 'javascript'],
+//            ['name' => 'React', 'slug' => 'react'],
+//            ['name' => 'Vue.js', 'slug' => 'vue-js'],
+//            ['name' => 'Fashion', 'slug' => 'fashion'],
+//            ['name' => 'Food', 'slug' => 'food'],
+//            ['name' => 'Travel', 'slug' => 'travel'],
+//        ];
+//
+//        foreach ($tags as $tag) {
+//            Tag::create($tag);
+//        }
 
         // Create some blog posts with categories and tags
         $blogs = [
@@ -74,11 +74,12 @@ class BlogsTableSeeder extends Seeder
                 'user_id' => $blog['user_id'],
             ]);
 
-            // Attach tags to the blog post
-            foreach ($blog['tags'] as $tagName) {
-                $tag = BlogTag::where('name', $tagName)->first();
-                $blogModel->tags()->attach($tag);
-            }
+//            // Attach tags to the blog post
+//            foreach ($blog['tags'] as $tagName) {
+//                $tag = BlogTag::where('name', $tagName)->first();
+//                $blogModel->tags()->attach($tag);
+//            }
+
         }
     }
 }

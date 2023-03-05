@@ -19,10 +19,10 @@ class CreateOrdersTable extends Migration
             $table->string('status')->default('pending');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('set null')->onUpdate('cascade');
-            $table->foreign('cart_id')->references('id')->on('carts')
-                ->onDelete('cascade')->onUpdate('cascade');
+//            $table->foreign('user_id')->references('id')->on('users')
+//                ->onDelete('set null')->onUpdate('cascade');
+//            $table->foreign('cart_id')->references('id')->on('carts')
+//                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

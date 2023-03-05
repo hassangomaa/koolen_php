@@ -33,6 +33,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::insert($permissions);
 
         // Generate 20 additional random permissions for testing purposes
-        factory(Permission::class, 20)->create();
+//        factory(Permission::class, 20)->create();
+
     }
 }
