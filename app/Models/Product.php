@@ -11,6 +11,18 @@ class Product extends Model
     //for testing only
     protected $guarded = [];
 
+    // In your Product model
+    public function getNameAttribute()
+    {
+        $locale = app()->getLocale();
+        return $this->{"name_$locale"};
+    }
+
+    public function variants()
+    {
+        return $this->hasMany('App\Variant');
+    }
+
     public function users()##wishlist
     {
         return $this->belongsToMany(User::class)

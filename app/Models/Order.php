@@ -19,6 +19,21 @@ class Order extends Model
 //        'notes',
 //        'status',
 //    ];
+    public function lineItems()
+    {
+        return $this->hasMany(LineItem::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function discounts()
+    {
+        return $this->belongsToMany(Discount::class);
+    }
+
 
     public function user()
     {
@@ -35,10 +50,10 @@ class Order extends Model
         return $this->belongsToMany(Product::class)->withPivot('quantity');
     }
 
-    public function payment()
-    {
-        return $this->hasOne(Payment::class);
-    }
+//    public function payment()
+//    {
+//        return $this->hasOne(Payment::class);
+//    }
 
     public function shipping()
     {

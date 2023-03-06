@@ -15,6 +15,29 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            //arabic name
+            $table->string('ar_name')->nullable();
+            //arabic description
+            $table->text('ar_description')->nullable();
+            //arabic short description
+            $table->text('ar_short_description')->nullable();
+            //arabic meta title
+            $table->string('ar_meta_title')->nullable();
+            //arabic meta description
+            $table->text('ar_meta_description')->nullable();
+            //arabic meta keywords
+            $table->text('ar_meta_keywords')->nullable();
+            //arabic brand
+            $table->string('ar_brand')->nullable();
+            //arabic vendor
+            $table->string('ar_vendor')->nullable();
+            //arabic slug
+            $table->string('ar_slug')->nullable();
+            //arabic categories
+            $table->json('ar_categories')->nullable();
+            //arabic tags
+            $table->json('ar_tags')->nullable();
+
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
@@ -45,6 +68,9 @@ return new class extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
+            $table->string('type')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });
     }

@@ -20,6 +20,12 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->timestamps();
+        //arabic name
+        $table->string('ar_name')->nullable();
+        //arabic description
+        $table->text('ar_description')->nullable();
+        //arabic slug
+        $table->string('ar_slug')->nullable();
 
 //            $table->foreign('parent_id')->references('id')->on('categories')
 //                ->onDelete('cascade')->onUpdate('cascade');
